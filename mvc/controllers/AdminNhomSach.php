@@ -14,7 +14,22 @@ class AdminNhomSach extends Controller
     {
         $this->view("masterAdmin", [
             "page" => "viewNhomSach",
-            "Nhom_sach" => $this->Nhom_sach->get_Nhomsach()
+            "Nhom_sach" => $this->Nhom_sach->get_Nhomsach(),
+            "kq" => false,
+            "thongBao" =>"Thêm thành công!"
+        ]);
+    }
+
+    function insertSach(){
+        if(isset($_POST["insert"])){
+            $nhomsach = $_POST["nhomSach"];
+        }
+        $kq = $this->Nhom_sach->insertNhomSach($nhomsach);
+        $this->view("masterAdmin", [
+            "page" => "viewNhomSach",
+            "Nhom_sach" => $this->Nhom_sach->get_Nhomsach(),
+            "kq" => $kq,
+            "thongBao" =>"Thêm thành công!"
         ]);
     }
 }

@@ -9,5 +9,15 @@
             }
             return json_encode($mang_NhomSach, JSON_PRETTY_PRINT);
         }
+
+        public function insertNhomSach($iNhomSach){
+            $query = "INSERT INTO nhomsachtable values(null, '$iNhomSach')";
+            $result = false;
+            if(mysqli_query($this->con, $query)){
+                $result = true;
+            }
+            return json_encode($result);
+        }
     }
+
 ?>
