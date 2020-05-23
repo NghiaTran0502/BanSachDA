@@ -16,7 +16,7 @@ class AdminNhomSach extends Controller
             "page" => "viewNhomSach",
             "Nhom_sach" => $this->Nhom_sach->get_Nhomsach(),
             "kq" => false,
-            "thongBao" =>"Thêm thành công!"
+            "thongBao" =>""
         ]);
     }
 
@@ -32,5 +32,19 @@ class AdminNhomSach extends Controller
             "thongBao" =>"Thêm thành công!"
         ]);
     }
+
+    function deleteSach(){
+        $un = $_POST["unn"];
+        $kq = $this->Nhom_sach->deleteNhomSach($un);
+        echo $kq;
+        // $this->view("masterAdmin", [
+        //     "page" => "viewNhomSach",
+        //     "Nhom_sach" => $this->Nhom_sach->get_Nhomsach(),
+        //     "kq" => false,
+        //     "thongBao" =>""
+        // ]);
+    }
+
+
 }
 ?>

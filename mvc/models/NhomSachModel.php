@@ -18,6 +18,15 @@
             }
             return json_encode($result);
         }
+
+        public function deleteNhomSach($idNhomSach){
+            $query = "DELETE FROM nhomsachtable WHERE idNhomSach = ".$idNhomSach."";
+            $result = false;
+            if(mysqli_query($this->con, $query)){
+                $result = true;
+            }
+            return json_encode($result);
+        }
     }
 
 ?>

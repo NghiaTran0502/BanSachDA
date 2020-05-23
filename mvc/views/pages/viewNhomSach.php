@@ -49,6 +49,7 @@ if ($kq != false) {
                 <tr>
                     <th>ID</th>
                     <th>Tên nhóm sách</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -59,6 +60,7 @@ if ($kq != false) {
                     <tr>
                         <td><?php echo $i["idNhomSach"] ?></td>
                         <td><?php echo $i["TenNhomSach"] ?></td>
+                        <td><a id="<?php echo $i["idNhomSach"] ?>" class="btn btn-danger deleteNhomSach">Xoá</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
