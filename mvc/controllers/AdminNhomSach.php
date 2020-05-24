@@ -36,13 +36,10 @@ class AdminNhomSach extends Controller
     function deleteSach(){
         $un = $_POST["unn"];
         $kq = $this->Nhom_sach->deleteNhomSach($un);
-        echo $kq;
-        // $this->view("masterAdmin", [
-        //     "page" => "viewNhomSach",
-        //     "Nhom_sach" => $this->Nhom_sach->get_Nhomsach(),
-        //     "kq" => false,
-        //     "thongBao" =>""
-        // ]);
+        if($kq==true)
+            echo "Xoá thành công!!!";
+        else
+            echo "Xoá không thành công!!!!";
     }
 
 

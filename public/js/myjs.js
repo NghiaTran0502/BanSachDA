@@ -19,10 +19,11 @@ $(document).ready(function () {
         // });
         $.ajax({
             type: "POST",
-            url: "./AdminNhomSach/deleteSach.php",
+            url: "./deleteSach",
             data: {unn: dataID},
             success: function(msg){
-                  alert( "Data Saved: " + msg );
+                  alert(msg );
+                  window.location.href = "./ShowTacGia";
             },
             error: function(err) {
                alert("some error" + err);
@@ -37,10 +38,11 @@ $(document).ready(function () {
         // });
         $.ajax({
             type: "POST",
-            url: "./AdminTacGia/deleteTacGia",
+            url: "./deleteTacGia",
             data: {idTG: dataID},
             success: function(msg){
-                alert( "Data Saved: " + msg );
+                alert(msg );
+                window.location.href = "./ShowTacGia";
             },
             error: function(err) {
                 alertg("some error" + err);

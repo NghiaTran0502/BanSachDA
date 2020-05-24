@@ -35,7 +35,10 @@ class AdminTacGia extends Controller
     function deleteTacGia(){
         $un = $_POST["idTG"];
         $kq = $this->TacGia->deleteTacGia($un);
-        echo $kq;
+        if($kq==true)
+            echo "Xoá thành công!!!";
+        else
+            echo "Xoá không thành công!!!!";
     }
 }
 ?>
