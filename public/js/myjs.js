@@ -14,16 +14,13 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#example').on('click', '.deleteNhomSach', function(){
         var dataID = parseInt(this.id);
-        // $.post("./deleteSach.php",{unn:22}, function(data){
-        //     console.log(data);
-        // });
         $.ajax({
             type: "POST",
             url: "./deleteSach",
             data: {unn: dataID},
             success: function(msg){
                   alert(msg );
-                  window.location.href = "./ShowTacGia";
+                  window.location.href = "./Show";
             },
             error: function(err) {
                alert("some error" + err);
@@ -33,9 +30,6 @@ $(document).ready(function () {
 
     $('#example').on('click', '.deleteTacGia', function(){
         var dataID = parseInt(this.id);
-        // $.post("./deleteSach.php",{unn:22}, function(data){
-        //     console.log(data);
-        // });
         $.ajax({
             type: "POST",
             url: "./deleteTacGia",
@@ -43,6 +37,22 @@ $(document).ready(function () {
             success: function(msg){
                 alert(msg );
                 window.location.href = "./ShowTacGia";
+            },
+            error: function(err) {
+                alertg("some error" + err);
+            }
+          });
+    });
+
+    $('#example').on('click', '.deleteNXB', function(){
+        var dataID = parseInt(this.id);
+        $.ajax({
+            type: "POST",
+            url: "./deleteNXB",
+            data: {unn: dataID},
+            success: function(msg){
+                alert(msg );
+                window.location.href = "./Show";
             },
             error: function(err) {
                 alertg("some error" + err);
