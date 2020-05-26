@@ -16,6 +16,22 @@ $(document).ready(function () {
         var dataID = parseInt(this.id);
         $.ajax({
             type: "POST",
+            url: "./DeleteSach",
+            data: {unn: dataID},
+            success: function(msg){
+                  alert(msg );
+                  window.location.href = "./Show";
+            },
+            error: function(err) {
+               alert("some error" + err);
+            }
+          });
+    });
+
+    $('#example').on('click', '.deleteSach', function(){
+        var dataID = parseInt(this.id);
+        $.ajax({
+            type: "POST",
             url: "./deleteSach",
             data: {unn: dataID},
             success: function(msg){
@@ -58,6 +74,10 @@ $(document).ready(function () {
                 alertg("some error" + err);
             }
           });
+    });
+
+    $("#themSachBTN").click(function(){
+        $("#myModal").modal();
     });
 });
 

@@ -42,6 +42,8 @@ class AdminNXB extends Controller
             echo "Xoá không thành công!!!!";
     }
 
-
+    function showAPINXB(){
+        echo $this->NXB->get_NXB();
+    }
 }
 ?>
