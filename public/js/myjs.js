@@ -79,6 +79,12 @@ $(document).ready(function () {
     $("#themSachBTN").click(function(){
         $("#myModal").modal();
     });
+    
+    
+    $('#sanPham').on('click', '.addGioHang', function(){
+        var dataID = parseInt(this.id);
+        console.log(dataID);
+    });
 });
 
 
