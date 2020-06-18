@@ -44,6 +44,22 @@
             return json_encode($mang_Sach, JSON_PRETTY_PRINT);
         }
 
+        public function loginn($username, $password){
+            $query = "SELECT * FROM userstable where userName = '".$username."' and passWords = '".$password."'";
+            $result = mysqli_query($this->con, $query);
+            $temp = mysqli_num_rows($result);
+            $user = array();
+            if($temp!=0){
+                $users = mysqli_fetch_row($result);
+                $_SESSION["username"] = $username;
+                $_SESSION["name"] = $users[4];
+                $_SESSION["role"] = $users[3];
+                // echo $_SESSION["role"];
+                // exit;
+            }
+            return json_encode($temp);
+        }
+
 
         public $gio_hang = array();
         public function them_hang($idSach, $sl){
@@ -53,7 +69,6 @@
             while($Sachs =  mysqli_fetch_array($Sach)){
                 $mang_Sach[] = $Sachs;
             }
-            
             //echo $gio_hang;
         }
     }

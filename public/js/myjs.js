@@ -85,6 +85,38 @@ $(document).ready(function () {
         var dataID = parseInt(this.id);
         console.log(dataID);
     });
+
+    $('#myModal').on('click', '#login', function(){
+        var userName = $('#username').val();
+        var passWord = $('#password').val();
+        $.ajax({
+            type: "POST",
+            url: "./login",
+            data: {user: userName, pass: passWord},
+            success: function(msg){
+                alert(msg );
+                window.location.href = "./Showw";
+            },
+            error: function(err) {
+                alertg("some error" + err);
+            }
+          });
+    });
+
+    $('#log').on('click', '#logout', function(){
+        $.ajax({
+            type: "POST",
+            url: "./logout",
+            data: {},
+            success: function(msg){
+                alert(msg );
+                window.location.href = "./Showw";
+            },
+            error: function(err) {
+                alertg("some error" + err);
+            }
+          });
+    });
 });
 
 

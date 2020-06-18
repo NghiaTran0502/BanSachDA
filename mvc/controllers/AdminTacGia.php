@@ -40,5 +40,9 @@ class AdminTacGia extends Controller
         else
             echo "Xoá không thành công!!!!";
     }
+
+    public function showAPII(){
+        echo $this->TacGia->get_TacGia();
+    }
 }
 ?>

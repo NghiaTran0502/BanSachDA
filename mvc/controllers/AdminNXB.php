@@ -43,7 +43,10 @@ class AdminNXB extends Controller
     }
 
     function showAPINXB(){
-        echo $this->NXB->get_NXB();
+        $a = $this->NXB->get_NXB();
+        // print $a;
+        echo $a;
+        // return $a;
     }
 }
 ?>

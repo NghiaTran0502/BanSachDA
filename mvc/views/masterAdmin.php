@@ -28,7 +28,7 @@
             <?php
             require_once("./mvc/views/pages/" . $data["page"] . ".php");
             ?>
-            <br>
+            
             <?php
             require_once("./mvc/views/blocks/footer.php");
             ?>
