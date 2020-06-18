@@ -22,7 +22,7 @@ if ($kq != false) {
     <div class="container">
         <div class="row">
             <div class="col-8">
-                <form action="./insertNXB" method="post">
+                <form action="./find" method="post">
                     <fieldset style="border: 1px solid #55efc4; padding: 10px; border-radius:10px">
                         <legend style="width: auto; border:0; color: #555;">Action</legend>
                         <div class="row" id="Book">
@@ -30,7 +30,7 @@ if ($kq != false) {
                                 <input type="text" name="maSach" placeholder="Mã sách" class="form-control">
                             </div>
                             <div class="col-2">
-                                <input type="button" value="Tìm kiếm" id="findSach" class="btn btn-success">
+                                <input type="submit" value="Tìm kiếm" id="findSach" class="btn btn-success">
                             </div>
                             <div class="col-2">
                                 <input type="button" value="Thêm" id="themSachBTN" class="btn btn-success">

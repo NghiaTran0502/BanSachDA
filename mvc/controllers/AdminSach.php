@@ -26,6 +26,19 @@ class AdminSach extends Controller{
         ]);
     }
 
+    public function find(){
+        $maSach = $_POST['maSach'];
+        $this->view("masterAdmin",[
+            "page" =>"viewSach",
+            "NXB" => $this->NXB->get_NXB(),
+            "Nhom_sach" => $this->NhomSach->get_Nhomsach(),
+            "Tac_gia" => $this->TacGia->get_TacGia(),
+            "Sach" => $this->Sach->findSach($maSach),
+            "kq" => false,
+            "thongBao"=>""
+        ]);
+    }
+
     public function DeleteSach(){
         $un = $_POST["unn"];
         $kq = $this->Sach->deleteSach($un);

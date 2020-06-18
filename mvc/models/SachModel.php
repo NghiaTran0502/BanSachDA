@@ -44,6 +44,32 @@
             return json_encode($mang_Sach, JSON_PRETTY_PRINT);
         }
 
+        public function findSach($maSachs){
+            $query = "SELECT idSach, maSach, tenSach, giaBan, theLoai, ngonNgu, soTrang, namPhatHanh, hinhAnh, tenTacGia, tenNhaXuatBan, TenNhomSach FROM sachtable s INNER JOIN tacgiatable tg ON
+                        s.idTacGia = tg.idTacGia INNER JOIN nhaxuatbantable nxb ON
+                        s.idNhaXuatBan = nxb.idNhaXuatban INNER JOIN nhomsachtable ns ON
+                        s.idNhomSach = ns.idNhomSach WHERE maSach like '%".$maSachs."%'";
+            $Sach =  mysqli_query($this->con, $query);
+            $mang_Sach = array();
+            while($Sachs =  mysqli_fetch_array($Sach)){
+                $mang_Sach[] = $Sachs;
+            }
+            return json_encode($mang_Sach, JSON_PRETTY_PRINT);
+        }
+
+        public function findSPPP($tenSach){
+            $query = "SELECT idSach, maSach, tenSach, giaBan, theLoai, ngonNgu, soTrang, namPhatHanh, hinhAnh, tenTacGia, tenNhaXuatBan, TenNhomSach FROM sachtable s INNER JOIN tacgiatable tg ON
+                        s.idTacGia = tg.idTacGia INNER JOIN nhaxuatbantable nxb ON
+                        s.idNhaXuatBan = nxb.idNhaXuatban INNER JOIN nhomsachtable ns ON
+                        s.idNhomSach = ns.idNhomSach WHERE tenSach like '%".$tenSach."%'";
+            $Sach =  mysqli_query($this->con, $query);
+            $mang_Sach = array();
+            while($Sachs =  mysqli_fetch_array($Sach)){
+                $mang_Sach[] = $Sachs;
+            }
+            return json_encode($mang_Sach, JSON_PRETTY_PRINT);
+        }
+
         public function loginn($username, $password){
             $query = "SELECT * FROM userstable where userName = '".$username."' and passWords = '".$password."'";
             $result = mysqli_query($this->con, $query);
@@ -58,6 +84,39 @@
                 // exit;
             }
             return json_encode($temp);
+        }
+
+
+        public function checked($username){
+            $query = "SELECT * FROM userstable where userName = '".$username."'";
+            $result = mysqli_query($this->con, $query);
+            $temp = mysqli_num_rows($result);
+            $result = false;
+            if($temp>0){
+                $result = true;
+            }
+            return json_encode($result);
+        }
+
+        public function phanHoi($name, $title, $phone, $mail, $body){
+            $query = "INSERT INTO phanhoitable values(null, '$name', '$title', '$phone', '$mail', '$body')";
+            $result = false;
+            if(mysqli_query($this->con, $query)){
+                $result = true;
+            }
+            return json_encode($result);
+        }
+
+
+        public function signUp($username, $password, $fullName, $gioiTinh){
+            $query = "INSERT INTO userstable values (null, '$username', '$password', false, '$fullName', '$gioiTinh')";
+            // print($query);
+            // exit;
+            $result = false;
+            if(mysqli_query($this->con, $query)){
+                $result = true;
+            }
+            return json_encode($result);
         }
 
 

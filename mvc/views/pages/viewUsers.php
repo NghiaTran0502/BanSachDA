@@ -22,12 +22,6 @@ if ($kq != false) {
                     <fieldset style="border: 1px solid #55efc4; padding: 10px; border-radius:10px">
                         <legend style="width: auto; border:0; color: #555;">Action</legend>
                         <div class="row" id="Book">
-                            <div class="col-8">
-                                <input type="text" name="maSach" placeholder="Mã sách" class="form-control">
-                            </div>
-                            <div class="col-2">
-                                <input type="button" value="Tìm kiếm" id="findSach" class="btn btn-success">
-                            </div>
                             <div class="col-2">
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                                     Thêm mới

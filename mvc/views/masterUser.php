@@ -39,6 +39,51 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModalSignUp">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header bg-info">
+                <h4 class="modal-title">Đăng ký</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="usr">UserName:</label>
+                    <input type="text" id="usernamedk" class="form-control">
+                    <span id="checked"></span>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" id="passworddk" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">RE Password:</label>
+                    <input type="password" id="RePassworddk" class="form-control">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="usr">Name:</label>
+                    <input type="text" id="namedk" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="usr">Sex:</label>
+                    <select name="" id="sexdk" class="form-control">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" id="signUp" class="btn btn-primary">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <header>
     <nav class="navbar navbar-expand-sm">
         <!-- Brand -->
@@ -47,11 +92,15 @@
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 1</a>
+                    <a class="nav-link" href="../TrangBanSach/Showw">Sách</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 2</a>
+                    <a class="nav-link" href="../LienHe/Show">Liên hệ</a>
                 </li>
+                <form class="form-inline" action="../TrangBanSach/findSP" method="POST">
+                    <input class="form-control mr-sm-2" type="text" name="findSPs" placeholder="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
                 <?php
                 if ($_SESSION["name"] != null) { ?>
                     <li class="nav-item dropdown" id="log">
@@ -74,6 +123,9 @@
                 ?>
                     <li class="nav-item">
                         <a id="login" data-toggle="modal" data-target="#myModal" class="nav-link">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="login" data-toggle="modal" data-target="#myModalSignUp" class="nav-link">Đăng ký</a>
                     </li>
                 <?php } ?>
 
