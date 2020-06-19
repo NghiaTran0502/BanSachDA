@@ -8,7 +8,7 @@ $temp = json_decode($temp, true);
         foreach ($temp as $i) {
         ?>
             <div class="col-4">
-                <img src="../public/images/<?php echo $i["hinhAnh"] ?>" style="width: 300px;" alt="" srcset="">
+                <img src="../public/images/<?php echo $i["hinhAnh"] ?>" style="width: 300px; border-radius: 10px;" alt="" srcset="">
             </div>
             <div class="col-8">
                 <div style="margin-top: 20px; font-size: 30px; font-weight: bold;">

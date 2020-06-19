@@ -48,5 +48,10 @@ class AdminNXB extends Controller
         echo $a;
         // return $a;
     }
+
+    function getCount(){
+        $kq = $this->NXB->getSL();
+        echo $kq;
+    }
 }
 ?>

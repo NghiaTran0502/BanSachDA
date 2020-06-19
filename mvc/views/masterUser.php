@@ -52,7 +52,7 @@
                 <div class="form-group">
                     <label for="usr">UserName:</label>
                     <input type="text" id="usernamedk" class="form-control">
-                    <span id="checked"></span>
+                    <span id="checked" style="color: red;"></span>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
@@ -61,7 +61,7 @@
                 <div class="form-group">
                     <label for="pwd">RE Password:</label>
                     <input type="password" id="RePassworddk" class="form-control">
-                    
+                    <span id="checkedP" style="color: red;"></span> 
                 </div>
                 <div class="form-group">
                     <label for="usr">Name:</label>

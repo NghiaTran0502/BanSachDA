@@ -1,4 +1,4 @@
-<h2>Quản lý nhóm sách</h2>
+<h2>Quản lý tác giả</h2>
 <?php
 $kq = $data["kq"];
 $thongBao = $data["thongBao"];
@@ -37,7 +37,7 @@ if ($kq != false) {
                 <div class="card text-center bg-primary">
                     <ul class="list-group list-group-flush">
                         <li style="font-size: 20px" class="list-group-item">Tổng số nhóm sách</li>
-                        <li style="font-size: 30px" class="list-group-item">10</li>
+                        <li style="font-size: 30px" class="list-group-item" id="countTacGia">10</li>
                     </ul>
                 </div>
             </div>

@@ -42,6 +42,11 @@ class AdminNhomSach extends Controller
             echo "Xoá không thành công!!!!";
     }
 
+    function getCount(){
+        $kq = $this->Nhom_sach->getSL();
+        echo $kq;
+    }
+
 
 }
 ?>

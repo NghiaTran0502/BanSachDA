@@ -12,6 +12,10 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
+
+
+
+
     $('#example').on('click', '.deleteNhomSach', function () {
         var dataID = parseInt(this.id);
         $.ajax({
@@ -91,7 +95,7 @@ $(document).ready(function () {
         var passWord = $('#password').val();
         $.ajax({
             type: "POST",
-            url: "./login",
+            url: "../TrangBanSach/login",
             data: { user: userName, pass: passWord },
             success: function (msg) {
                 alert(msg);
@@ -112,7 +116,7 @@ $(document).ready(function () {
         if (passWord == rePass) {
             $.ajax({
                 type: "POST",
-                url: "./signUp",
+                url: "../TrangBanSach/signUp",
                 data: { user: userName, pass: passWord, fullName: name, gioiTinh: gioitinh },
                 success: function (msg) {
                     alert(msg);
@@ -154,7 +158,7 @@ $(document).ready(function () {
     $('#log').on('click', '#logout', function () {
         $.ajax({
             type: "POST",
-            url: "./logout",
+            url: "../TrangBanSach/logout",
             data: {},
             success: function (msg) {
                 alert(msg);
@@ -178,16 +182,113 @@ $(document).ready(function () {
         // });
         $.ajax({
             type: "POST",
-            url: "../TrangBanSach/checkkk",
+            url: "./che",
             data: { user: userName },
             success: function (msg) {
                 console.log(msg);
+                if(msg=="true"){
+                    $("#checked").html("Tài khoản đã tồn tại!");
+                }
+                else{
+                    $("#checked").html("");
+                }
             },
             error: function (err) {
                 console.log("some error" + err);
             }
         });
+    });
 
+    $('#myModalSignUp').on("keyup", '#RePassworddk', function () {
+        var password = $('#passworddk').val();
+        var re = $('#RePassworddk').val();
+        if(re==password){
+            $("#checkedP").html("");
+        }
+        else{
+            $("#checkedP").html("Mật khẩu không trùng khớp!");
+        }
+    });
+
+    // $('#us').on('load','#countUser', function(){
+    //     console.log("test");
+    // })
+
+    $("#countUser").html(function(){
+        $.ajax({
+            type: "POST",
+            url: "../AdminUsers/getCount",
+            data: {},
+            success: function (msg) {
+                console.log(msg);
+                $("#countUser").html(msg);
+            },
+            error: function (err) {
+                console.log("some error" + err);
+            }
+        });
+    });
+
+
+    $("#countNXB").html(function(){
+        $.ajax({
+            type: "POST",
+            url: "../AdminNXB/getCount",
+            data: {},
+            success: function (msg) {
+                console.log(msg);
+                $("#countNXB").html(msg);
+            },
+            error: function (err) {
+                console.log("some error" + err);
+            }
+        });
+    });
+
+    $("#countNhomSach").html(function(){
+        $.ajax({
+            type: "POST",
+            url: "../AdminNhomSach/getCount",
+            data: {},
+            success: function (msg) {
+                console.log(msg);
+                $("#countNhomSach").html(msg);
+            },
+            error: function (err) {
+                console.log("some error" + err);
+            }
+        });
+    });
+    
+    $("#countSach").html(function(){
+        $.ajax({
+            type: "POST",
+            url: "../AdminNhomSach/getCount",
+            data: {},
+            success: function (msg) {
+                console.log(msg);
+                $("#countSach").html(msg);
+            },
+            error: function (err) {
+                console.log("some error" + err);
+            }
+        });
+    });
+
+
+    $("#countTacGia").html(function(){
+        $.ajax({
+            type: "POST",
+            url: "../AdminTacGia/getCount",
+            data: {},
+            success: function (msg) {
+                console.log(msg);
+                $("#countTacGia").html(msg);
+            },
+            error: function (err) {
+                console.log("some error" + err);
+            }
+        });
     });
 });
 

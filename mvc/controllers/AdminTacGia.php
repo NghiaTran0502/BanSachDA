@@ -44,5 +44,10 @@ class AdminTacGia extends Controller
     public function showAPII(){
         echo $this->TacGia->get_TacGia();
     }
+
+    function getCount(){
+        $kq = $this->TacGia->getSL();
+        echo $kq;
+    }
 }
 ?>

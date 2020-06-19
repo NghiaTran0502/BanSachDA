@@ -1,4 +1,4 @@
-<h2>Quản lý nhóm sách</h2>
+<h2>Quản lý NXB</h2>
 <?php
 $kq = $data["kq"];
 $thongBao = $data["thongBao"];
@@ -21,7 +21,7 @@ if ($kq != false) {
                 <form action="./insertNXB" method="post">
                     <fieldset style="border: 1px solid #55efc4; padding: 10px; border-radius:10px">
                         <legend style="width: auto; border:0; color: #555;">Action</legend>
-                        Tên nhóm sách
+                        Tên NXB
                         <div class="row">
                             <div class="col-10">
                                 <input type="text" name="NXB" class="form-control" id="">
@@ -36,8 +36,8 @@ if ($kq != false) {
             <div class="col-4">
                 <div class="card text-center bg-primary">
                     <ul class="list-group list-group-flush">
-                        <li style="font-size: 20px" class="list-group-item">Tổng số nhóm sách</li>
-                        <li style="font-size: 30px" class="list-group-item">10</li>
+                        <li style="font-size: 20px" class="list-group-item">Tổng số NXB</li>
+                        <li style="font-size: 30px" class="list-group-item" id="countNXB">10</li>
                     </ul>
                 </div>
             </div>

@@ -89,6 +89,7 @@
 
         public function checked($username){
             $query = "SELECT * FROM userstable where userName = '".$username."'";
+            
             $result = mysqli_query($this->con, $query);
             $temp = mysqli_num_rows($result);
             $result = false;
@@ -130,6 +131,15 @@
             }
             //echo $gio_hang;
         }
-    }
 
+        public function getSL(){
+            $query = "SELECT idSach, maSach, tenSach, giaBan, theLoai, ngonNgu, soTrang, namPhatHanh, hinhAnh, tenTacGia, tenNhaXuatBan, TenNhomSach FROM sachtable s INNER JOIN tacgiatable tg ON
+            s.idTacGia = tg.idTacGia INNER JOIN nhaxuatbantable nxb ON
+            s.idNhaXuatBan = nxb.idNhaXuatban INNER JOIN nhomsachtable ns ON
+            s.idNhomSach = ns.idNhomSach";
+            $result = mysqli_query($this->con, $query);
+            $temp = mysqli_num_rows($result);
+            return json_encode($temp, JSON_PRETTY_PRINT);
+        }
+    }
 ?>

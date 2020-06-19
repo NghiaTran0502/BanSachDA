@@ -83,6 +83,11 @@ class AdminSach extends Controller{
     public function show_API_Sach(){
         echo $this->Sach->get_Sach();
     }
+
+    function getCount(){
+        $kq = $this->Sach->getSL();
+        echo $kq;
+    }
 }
 
 ?>

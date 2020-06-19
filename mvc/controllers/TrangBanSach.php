@@ -80,11 +80,12 @@ class TrangBanSach extends Controller
             echo "Đăng nhập không thành công!!!!";
     }
 
-    public function checkkk(){
-        $userN = $_POST("usera");
-        print($userN);
-        exit;
-        $kq = $this->TrangBanSach->checked($userN);
+    public function che()
+    {
+        $username = $_POST["user"];
+        $kq = $this->TrangBanSach->checked($username);
+        echo $kq;
+        
     }
 
     public function signUp(){

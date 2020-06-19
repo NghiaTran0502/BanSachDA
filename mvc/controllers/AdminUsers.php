@@ -37,6 +37,11 @@ class AdminUsers extends Controller
         ]);
     }
 
+    function getCount(){
+        $kq = $this->Users->getSL();
+        echo $kq;
+    }
+
     // function deleteNXB(){
     //     $un = $_POST["unn"];
     //     $kq = $this->NXB->deleteNXB($un);

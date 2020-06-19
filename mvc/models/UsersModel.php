@@ -19,6 +19,14 @@
             return json_encode($result);
         }
 
+
+        public function getSL(){
+            $query = "SELECT * FROM userstable";
+            $result = mysqli_query($this->con, $query);
+            $temp = mysqli_num_rows($result);
+            return json_encode($temp, JSON_PRETTY_PRINT);
+        }
+
         // public function deleteNXB($idNXB){
         //     $query = "DELETE FROM nhaxuatbantable WHERE idNhaXuatBan = ".$idNXB."";
         //     $result = false;
