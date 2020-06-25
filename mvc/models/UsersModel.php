@@ -11,7 +11,8 @@
         }
 
         public function insertUsers($iUserName, $password, $role, $fullname, $gioitinh){
-            $query = "INSERT INTO userstable values(null, '$iUserName', '$password', '$role', '$fullname', '$gioitinh')";
+            $test = md5($password);
+            $query = "INSERT INTO userstable values(null, '$iUserName', '$test', '$role', '$fullname', '$gioitinh')";
             $result = false;
             if(mysqli_query($this->con, $query)){
                 $result = true;

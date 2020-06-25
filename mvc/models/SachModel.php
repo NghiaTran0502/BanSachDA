@@ -71,7 +71,8 @@
         }
 
         public function loginn($username, $password){
-            $query = "SELECT * FROM userstable where userName = '".$username."' and passWords = '".$password."'";
+            $test = md5($password);
+            $query = "SELECT * FROM userstable where userName = '".$username."' and passWords = '".$test."'";
             $result = mysqli_query($this->con, $query);
             $temp = mysqli_num_rows($result);
             $user = array();
@@ -110,7 +111,8 @@
 
 
         public function signUp($username, $password, $fullName, $gioiTinh){
-            $query = "INSERT INTO userstable values (null, '$username', '$password', false, '$fullName', '$gioiTinh')";
+            $test = md5($password);
+            $query = "INSERT INTO userstable values (null, '$username', '$test', false, '$fullName', '$gioiTinh')";
             // print($query);
             // exit;
             $result = false;
